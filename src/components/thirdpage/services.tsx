@@ -103,7 +103,7 @@ const Services = () => {
       </h2>
 
       {/* Main Card */}
-      <div className="w-full max-w-2xl bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm flex flex-col h-full md:mr-10">
+      <div className="w-full max-w-2xl bg-white border border-gray-200 rounded-2xl overflow-hidden  shadow-sm flex flex-col h-full md:mr-10">
         {/* Tabs Row */}
         <div className="flex w-full border-b border-gray-200 overflow-x-auto no-scrollbar">
           {servicesList.map((svc, idx) => {
