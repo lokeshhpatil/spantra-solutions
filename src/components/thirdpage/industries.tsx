@@ -24,7 +24,6 @@ const Industries = () => {
       tabTitle: "Banking",
       desc: "Secure and compliant data operations for the banking sector. We support Non-Banking Financial Companies with accurate document processing and data management.",
       images: [
-        "https://images.unsplash.com/photo-1501167783584-c6511aaee11e?auto=format&fit=crop&w=800&q=80",
         "https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?auto=format&fit=crop&w=800&q=80",
         "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80",
       ],
@@ -36,9 +35,8 @@ const Industries = () => {
       tabTitle: "Insurance",
       desc: "Streamline claims processing, policy management, and customer data verification with our reliable data entry and validation services.",
       images: [
-        "https://images.unsplash.com/photo-1450101499163-c8848c66cb85?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1588681664899-f142ff2dc9b1?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1556740749-8809ff0aeb12?auto=format&fit=crop&w=800&q=80",
+        "https://images.pexels.com/photos/7688374/pexels-photo-7688374.jpeg",
+        "https://images.pexels.com/photos/10341357/pexels-photo-10341357.jpeg",
       ],
     },
     {
@@ -73,8 +71,8 @@ const Industries = () => {
       desc: "Streamlined processes and accuracy for medical data operations. We ensure compliance and efficiency for patient records and billing.",
       images: [
         "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1551076805-e18690c5e53b?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1530497610245-94d3c16cda28?auto=format&fit=crop&w=800&q=80",
+        "https://images.pexels.com/photos/4386466/pexels-photo-4386466.jpeg",
+        ,
       ],
     },
     {
@@ -84,9 +82,8 @@ const Industries = () => {
       tabTitle: "Logistics",
       desc: "Keep your supply chain moving with accurate data entry for shipping manifests, inventory tracking, and invoice processing.",
       images: [
-        "https://images.unsplash.com/photo-1586528116311-ad8ed7c663c0?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1601584115197-04ecc058ce60?auto=format&fit=crop&w=800&q=80",
+        "https://images.pexels.com/photos/5025636/pexels-photo-5025636.jpeg",
+        "https://images.pexels.com/photos/1267325/pexels-photo-1267325.jpeg",
       ],
     },
     {
@@ -108,7 +105,6 @@ const Industries = () => {
       tabTitle: "Education",
       desc: "Support educational institutions with student record digitization, test score formatting, and administrative back-office tasks.",
       images: [
-        "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80",
         "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80",
         "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=800&q=80",
       ],

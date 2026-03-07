@@ -57,10 +57,8 @@ const SecondPage = () => {
     if (!scrollContainerRef.current) return;
     const container = scrollContainerRef.current;
 
-    // Find the item width and calculate the current index based on scroll position
     if (container.children.length > 0) {
       const firstChild = container.children[0] as HTMLElement;
-      // gap-6 is 24px
       const itemWidth = firstChild.offsetWidth + 24;
 
       const newIndex = Math.round(container.scrollLeft / itemWidth);
