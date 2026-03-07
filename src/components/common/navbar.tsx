@@ -1,39 +1,69 @@
+"use client"; // Required for useState
+import { useState } from "react";
 import Link from "next/link";
 import Button from "./button";
+import { Menu, X } from "lucide-react"; // Standard icons for mobile menus
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    // 'fixed' or 'absolute' lets it float. 'z-50' keeps it on top of images.
-    <header className="fixed top-4 inset-x-0 z-50 px-6">
-      <nav className="max-w-7xl mx-auto flex items-center justify-between bg-white/80 backdrop-blur-md border border-gray-100 py-1 pl-8 pr-2 rounded-full shadow-sm">
-        {/* Logo */}
-        <div className="flex items-center gap-2">
-          {/* Add your Spantra Logo icon here if you have one */}
-          <span className="text-xl font-extrabold tracking-tighter text-slate-900">
-            SPANTRA
-          </span>
+    <header className="fixed top-4 inset-x-0 z-50 px-4 md:px-6">
+      <nav className="max-w-7xl mx-auto bg-white/90 backdrop-blur-md border border-gray-100 rounded-[2rem] shadow-sm overflow-hidden">
+        <div className="flex items-center justify-between py-2 pl-6 pr-2">
+          {/* Logo */}
+          <Link href="/" className="flex items-center gap-2">
+            <span className="text-lg md:text-xl font-extrabold tracking-tighter text-slate-900">
+              SPANTRA
+            </span>
+          </Link>
+
+          {/* Desktop Links (Hidden on Mobile) */}
+          <div className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+            <Link href="/" className="hover:text-black transition">
+              Home
+            </Link>
+            <Link href="/services" className="hover:text-black transition">
+              Services
+            </Link>
+            <Link href="/about" className="hover:text-black transition">
+              About Us
+            </Link>
+          </div>
+
+          {/* Right Side: CTA + Mobile Toggle */}
+          <div className="flex items-center gap-2">
+            <div className="hidden sm:block">
+              <Button text="Book a Call" variant="primary" />
+            </div>
+
+            {/* Mobile Menu Toggle */}
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="md:hidden p-2 text-slate-600 hover:bg-slate-100 rounded-full transition"
+            >
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
 
-        {/* Links */}
-        <div className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
-          <Link href="/" className="hover:text-black transition">
-            Home
-          </Link>
-          <Link href="/services" className="hover:text-black transition">
-            Services
-          </Link>
-          <Link href="/about" className="hover:text-black transition">
-            About Us
-          </Link>
-          <Link href="/blog" className="hover:text-black transition">
-            Blog
-          </Link>
-        </div>
-
-        {/* Action Button */}
-        <div className="bg-red-500 rounded-full">
-          <Button text="Book a Free Call" variant="primary" />
-        </div>
+        {/* Mobile Menu Dropdown */}
+        {isOpen && (
+          <div className="md:hidden border-t border-gray-100 bg-white px-6 py-4 flex flex-col gap-4 text-slate-600 font-medium">
+            <Link href="/" onClick={() => setIsOpen(false)}>
+              Home
+            </Link>
+            <Link href="/services" onClick={() => setIsOpen(false)}>
+              Services
+            </Link>
+            <Link href="/about" onClick={() => setIsOpen(false)}>
+              About Us
+            </Link>
+            <div className="pt-2 sm:hidden">
+              <Button text="Book a Call" variant="primary" />
+            </div>
+          </div>
+        )}
       </nav>
     </header>
   );

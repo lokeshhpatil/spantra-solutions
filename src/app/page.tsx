@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Navbar from "@/components/common/navbar";
 import FirstPart from "@/components/mainpage/firstpart";
 import SecondPart from "@/components/mainpage/secondpart";
@@ -9,12 +8,12 @@ export default function Home() {
     <div>
       {/* Hero Section takes remaining viewport height minus navbar (80px) */}
       <Navbar />
-      <div className="flex flex-row h-screen">
+      <div className="flex flex-col lg:flex-row min-h-screen">
         <FirstPart />
         <SecondPart />
       </div>
 
-      <div className="flex h-screen bg-black">
+      <div className="flex flex-col lg:flex-row min-h-screen bg-black">
         <Firstpage />
         <Secondpage />
       </div>
