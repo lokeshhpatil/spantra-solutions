@@ -27,7 +27,7 @@ const FirstPart = () => {
 
       {/* Stats Section: Using flex-col on mobile, flex-row on desktop */}
       <div className="mt-auto px-6 md:px-20 pb-12">
-        <div className="flex flex-col md:flex-row items-start md:items-center gap-8 md:gap-16 border-t border-gray-200 pt-10">
+        <div className="flex flex-row mr-5 mb-10 md:flex-row items-start md:items-center gap-8 md:gap-16 border-t border-gray-200 pt-10">
           {/* Stat 1: Accuracy Rate */}
           <div className="flex flex-col border-l-2 border-[#D9E31F] pl-4">
             <span className="text-3xl font-bold text-slate-900">99%+</span>

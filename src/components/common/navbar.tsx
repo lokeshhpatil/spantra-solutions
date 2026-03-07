@@ -59,9 +59,9 @@ const Navbar = () => {
             <Link href="/about" onClick={() => setIsOpen(false)}>
               About Us
             </Link>
-            <div className="pt-2 sm:hidden">
+            {/* <div className="pt-2 sm:hidden">
               <Button text="Book a Call" variant="primary" />
-            </div>
+            </div> */}
           </div>
         )}
       </nav>

@@ -5,6 +5,8 @@ import {
   MessageCircleMore,
   ShieldCheck,
   TrendingUp,
+  Headset,
+  BarChart3,
 } from "lucide-react";
 import { useState, useRef } from "react";
 
@@ -33,6 +35,18 @@ const SpantraModels = [
       "Data protection at every stage with authorized access and secure, encrypted handling systems.",
     icon: <MessageCircleMore size={20} className="text-slate-600" />,
   },
+  {
+    title: "Reporting Model",
+    description:
+      "Transparent daily, weekly, and monthly reporting with productivity and accuracy tracking.",
+    icon: <BarChart3 size={20} className="text-slate-600" />,
+  },
+  {
+    title: "Expert Support",
+    description:
+      "Your dedicated back-office partner providing high-speed data entry and reliable outsourced teams.",
+    icon: <Headset size={20} className="text-slate-600" />,
+  },
 ];
 
 const SecondPage = () => {
@@ -57,17 +71,6 @@ const SecondPage = () => {
   return (
     <section className="flex-1 bg-[#F3F4EF] py-24 px-6 md:px-20 min-h-screen">
       <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
-        {/* <div className="mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#084127] opacity-88 tracking-tighter">
-            We strongly believe in providing <br className="hidden md:block" />
-            perfect service to our customers.
-          </h2>
-        </div> */}
-
-        {/* The Grid: 1 column on mobile, 2 on tablets, 3 on large screens */}
-        {/* This prevents the "collapsing" issue by defining strict tracks */}
-
         <div
           ref={scrollContainerRef}
           onScroll={handleScroll}
