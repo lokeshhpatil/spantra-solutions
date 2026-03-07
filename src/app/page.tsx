@@ -22,7 +22,7 @@ export default function Home() {
       </div>
 
       {/* Third Form */}
-      <div className="flex flex-col lg:flex-row min-h-screen">
+      <div className="flex flex-col lg:flex-row w-full min-h-screen">
         <Services />
         <Industries />
       </div>
