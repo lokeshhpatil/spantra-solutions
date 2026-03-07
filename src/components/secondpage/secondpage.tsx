@@ -69,7 +69,7 @@ const SecondPage = () => {
   };
 
   return (
-    <section className="flex-1 bg-[#F3F4EF] py-24 px-6 md:px-20 min-h-screen">
+    <section className="flex-1 bg-[#F3F4EF] py-24 px-6 md:px-20 min-h-[50vh] pt-10">
       <div className="max-w-7xl mx-auto">
         <div
           ref={scrollContainerRef}
