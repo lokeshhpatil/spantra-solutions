@@ -53,7 +53,7 @@ const Articles = () => {
             blogs.map((blog) => (
               <div key={blog._id} className="group flex flex-col gap-4">
                 {/* Image Container */}
-                <div className="relative w-full aspect-[4/3] bg-gray-100 overflow-hidden">
+                <div className="relative w-full aspect-4/3 bg-gray-100 overflow-hidden">
                   {blog.coverImage ? (
                     <img
                       src={blog.coverImage}

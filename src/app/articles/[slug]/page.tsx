@@ -89,7 +89,7 @@ export default async function BlogPostPage({
         </header>
 
         {/* Cover Image */}
-        <div className="relative w-full aspect-video md:aspect-[21/9] bg-gray-100 mb-12 rounded-2xl overflow-hidden shadow-sm">
+        <div className="relative w-full aspect-video md:aspect-21/9 bg-gray-100 mb-12 rounded-2xl overflow-hidden shadow-sm">
           {blog.coverImage ? (
             <img
               src={blog.coverImage}
