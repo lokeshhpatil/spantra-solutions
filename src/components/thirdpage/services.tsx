@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import Image from "next/image";
 import {
   Keyboard,
   Database,
@@ -133,14 +134,14 @@ const Services = () => {
           {/* Images Grid */}
           <div className="grid grid-cols-2 gap-3 h-48 sm:h-64">
             <div className="w-full h-full rounded-xl overflow-hidden">
-              <img
+              <Image
                 src={activeData.images[0]}
                 alt={`${activeData.tabTitle} 1`}
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
               />
             </div>
             <div className="w-full h-full rounded-xl overflow-hidden">
-              <img
+              <Image
                 src={activeData.images[1]}
                 alt={`${activeData.tabTitle} 2`}
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"

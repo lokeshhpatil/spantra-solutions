@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const Logos = () => {
   const logosNames = [
     {
@@ -33,7 +35,7 @@ const Logos = () => {
           key={index}
           className="relative w-32 h-12 flex justify-center items-center"
         >
-          <img
+          <Image
             src={item.logoUrl}
             alt={item.company}
             className="w-full h-full object-contain"

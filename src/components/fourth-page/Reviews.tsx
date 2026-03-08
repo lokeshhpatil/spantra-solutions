@@ -31,7 +31,7 @@ const Reviews = () => {
             className="flex-none w-full snap-center p-6 border rounded-xl shadow-sm bg-white mx-2"
           >
             <p className="text-gray-600 leading-relaxed italic text-sm md:text-xl">
-              "{rev.text}"
+              &quot;{rev.text}&quot;
             </p>
             <br />
             <h3 className="font-bold text-black md:text-black mb-2">

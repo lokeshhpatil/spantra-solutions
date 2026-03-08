@@ -12,6 +12,7 @@ import {
   Rocket,
   ArrowRight,
 } from "lucide-react";
+import Image from "next/image";
 
 const Industries = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -72,7 +73,6 @@ const Industries = () => {
       images: [
         "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80",
         "https://images.pexels.com/photos/4386466/pexels-photo-4386466.jpeg",
-        ,
       ],
     },
     {
@@ -162,14 +162,14 @@ const Industries = () => {
           {/* Images Grid */}
           <div className="grid grid-cols-2 gap-3 h-48 sm:h-64">
             <div className="w-full h-full rounded-xl overflow-hidden">
-              <img
+              <Image
                 src={activeData.images[0]}
                 alt={`${activeData.tabTitle} 1`}
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
               />
             </div>
             <div className="w-full h-full rounded-xl overflow-hidden">
-              <img
+              <Image
                 src={activeData.images[1]}
                 alt={`${activeData.tabTitle} 2`}
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"

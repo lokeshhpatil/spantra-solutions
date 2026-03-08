@@ -1,4 +1,5 @@
 import Navbar from "@/components/common/navbar";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 
 // Define the Blog interface
@@ -91,7 +92,7 @@ export default async function BlogPostPage({
         {/* Cover Image */}
         <div className="relative w-full aspect-video md:aspect-21/9 bg-gray-100 mb-12 rounded-2xl overflow-hidden shadow-sm">
           {blog.coverImage ? (
-            <img
+            <Image
               src={blog.coverImage}
               alt={blog.title}
               className="w-full h-full object-cover"
