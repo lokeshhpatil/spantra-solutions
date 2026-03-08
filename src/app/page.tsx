@@ -8,6 +8,7 @@ import Industries from "@/components/thirdpage/industries";
 import Heading from "@/components/fourth-page/heading";
 import Reviews from "@/components/fourth-page/Reviews";
 import Logos from "@/components/thirdpage/logos";
+import Articles from "@/components/articles/Articles";
 // import Testimonials from "@/components/fourth-page/testimonials";
 
 export default function Home() {
@@ -43,6 +44,10 @@ export default function Home() {
               <Logos />
             </div>
           </div>
+        </div>
+
+        <div className="bg-white flex flex-col lg:flex-row w-full min-h-screen">
+          <Articles />
         </div>
       </div>
     </>
