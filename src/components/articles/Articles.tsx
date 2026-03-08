@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 
 interface Blog {
   _id: string;
@@ -55,7 +56,7 @@ const Articles = () => {
                 {/* Image Container */}
                 <div className="relative w-full aspect-4/3 bg-gray-100 overflow-hidden">
                   {blog.coverImage ? (
-                    <img
+                    <Image
                       src={blog.coverImage}
                       alt={blog.title}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
