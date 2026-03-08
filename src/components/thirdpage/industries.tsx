@@ -165,6 +165,8 @@ const Industries = () => {
               <Image
                 src={activeData.images[0]}
                 alt={`${activeData.tabTitle} 1`}
+                width={800}
+                height={600}
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
               />
             </div>
@@ -172,6 +174,8 @@ const Industries = () => {
               <Image
                 src={activeData.images[1]}
                 alt={`${activeData.tabTitle} 2`}
+                width={800}
+                height={600}
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
               />
             </div>

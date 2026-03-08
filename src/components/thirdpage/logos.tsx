@@ -38,6 +38,8 @@ const Logos = () => {
           <Image
             src={item.logoUrl}
             alt={item.company}
+            height={32}
+            width={32}
             className="w-full h-full object-contain"
           />
         </div>
