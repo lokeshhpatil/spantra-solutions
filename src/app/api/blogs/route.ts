@@ -7,8 +7,11 @@ export async function GET() {
     await dbConnect();
     const blogs = await Blog.find({}).sort({ createdAt: -1 });
     return NextResponse.json({ success: true, data: blogs }, { status: 200 });
-  } catch (error: any) {
-    return NextResponse.json({ success: false, error: error.message }, { status: 500 });
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      return NextResponse.json({ success: false, error: error.message }, { status: 500 });
+    }
+    return NextResponse.json({ success: false, error: 'An unknown error occurred' }, { status: 500 });
   }
 }
 
@@ -27,14 +30,17 @@ export async function POST(request: Request) {
 
     const blog = await Blog.create(body);
     return NextResponse.json({ success: true, data: blog }, { status: 201 });
-  } catch (error: any) {
+  } catch (error: unknown) {
     // Check for duplicate key error (duplicate slug)
-    if (error.code === 11000) {
+    if (error && typeof error === 'object' && 'code' in error && error.code === 11000) {
       return NextResponse.json(
         { success: false, error: 'A blog with this slug already exists' },
         { status: 400 }
       );
     }
-    return NextResponse.json({ success: false, error: error.message }, { status: 500 });
+    if (error instanceof Error) {
+      return NextResponse.json({ success: false, error: error.message }, { status: 500 });
+    }
+    return NextResponse.json({ success: false, error: 'An unknown error occurred' }, { status: 500 });
   }
 }

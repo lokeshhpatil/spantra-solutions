@@ -23,7 +23,20 @@ const Navbar = () => {
             <Link href="/" className="hover:text-black transition">
               Home
             </Link>
-            <Link href="/services" className="hover:text-black transition">
+            <Link
+              href="/#services"
+              onClick={(e) => {
+                const isHome = window.location.pathname === "/";
+                if (isHome) {
+                  e.preventDefault();
+                  document
+                    .getElementById("services")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                  window.history.pushState(null, "", "/#services");
+                }
+              }}
+              className="hover:text-black transition cursor-pointer"
+            >
               Services
             </Link>
             <Link href="/about" className="hover:text-black transition">
@@ -53,7 +66,24 @@ const Navbar = () => {
             <Link href="/" onClick={() => setIsOpen(false)}>
               Home
             </Link>
-            <Link href="/services" onClick={() => setIsOpen(false)}>
+            <Link
+              href="/#services"
+              onClick={(e) => {
+                setIsOpen(false);
+                const isHome = window.location.pathname === "/";
+                if (isHome) {
+                  e.preventDefault();
+                  // Small timeout ensures the mobile menu closes before smooth scrolling
+                  setTimeout(() => {
+                    document
+                      .getElementById("services")
+                      ?.scrollIntoView({ behavior: "smooth" });
+                    window.history.pushState(null, "", "/#services");
+                  }, 100);
+                }
+              }}
+              className="cursor-pointer"
+            >
               Services
             </Link>
             <Link href="/about" onClick={() => setIsOpen(false)}>

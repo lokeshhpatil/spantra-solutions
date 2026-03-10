@@ -98,7 +98,10 @@ const Services = () => {
   const activeData = servicesList[activeTab];
 
   return (
-    <div className="w-full flex-1 bg-[#fafafa] py-10 px-4 md:px-6 flex flex-col items-center">
+    <div
+      id="services"
+      className="w-full flex-1 bg-[#fafafa] py-10 px-4 md:px-6 flex flex-col items-center"
+    >
       <h2 className="text-3xl md:text-4xl font-semibold text-center mb-8 text-gray-900 max-w-2xl leading-tight">
         The modern platform for our services
       </h2>
