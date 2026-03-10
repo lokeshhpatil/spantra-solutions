@@ -17,7 +17,7 @@ interface Blog {
 // Fetch a single blog by its slug
 async function getBlog(slug: string): Promise<Blog | null> {
   try {
-    const res = await fetch(`http://localhost:5000/api/blogs/${slug}`, {
+    const res = await fetch(`http://localhost:3000/api/blogs/${slug}`, {
       // Revalidate every hour, or use 'no-store' if you want it completely dynamic for every request.
       next: { revalidate: 3600 },
     });
@@ -95,6 +95,8 @@ export default async function BlogPostPage({
             <Image
               src={blog.coverImage}
               alt={blog.title}
+              width={1200}
+              height={630}
               className="w-full h-full object-cover"
             />
           ) : (
