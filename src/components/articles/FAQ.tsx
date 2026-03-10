@@ -49,7 +49,7 @@ export default function FAQ() {
           </h2>
 
           <p className="text-gray-500 text-lg mb-8">
-            Don't find the answer? We can help
+            Don&apos;t find the answer? We can help
           </p>
 
           <a className="inline-flex items-center justify-center bg-[#295c4d] text-white px-8 py-3.5 rounded-full font-medium hover:bg-[#1f473b] transition-colors w-max">
