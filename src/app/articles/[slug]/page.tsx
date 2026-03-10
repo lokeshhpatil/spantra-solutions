@@ -14,23 +14,15 @@ interface Blog {
   createdAt: string;
 }
 
-// Fetch a single blog by its slug
-async function getBlog(slug: string): Promise<Blog | null> {
+import dbConnect from "@/lib/mongoose";
+import BlogModel from "@/models/Blog";
+
+// Fetch a single blog by its slug directly from the database
+async function getBlog(slug: string) {
   try {
-    const res = await fetch(`http://localhost:3000/api/blogs/${slug}`, {
-      // Revalidate every hour, or use 'no-store' if you want it completely dynamic for every request.
-      next: { revalidate: 3600 },
-    });
-
-    if (!res.ok) {
-      return null;
-    }
-
-    const data = await res.json();
-    if (data.success) {
-      return data.data;
-    }
-    return null;
+    await dbConnect();
+    const blog = await BlogModel.findOne({ slug }).lean();
+    return blog;
   } catch (error) {
     console.error("Failed to fetch blog:", error);
     return null;
