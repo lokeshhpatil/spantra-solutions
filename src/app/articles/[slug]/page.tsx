@@ -2,6 +2,8 @@ import Navbar from "@/components/common/navbar";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
+export const dynamic = "force-dynamic";
+
 // Define the Blog interface
 interface Blog {
   _id: string;
@@ -18,11 +20,26 @@ import dbConnect from "@/lib/mongoose";
 import BlogModel from "@/models/Blog";
 
 // Fetch a single blog by its slug directly from the database
-async function getBlog(slug: string) {
+async function getBlog(slug: string): Promise<Blog | null> {
   try {
     await dbConnect();
-    const blog = await BlogModel.findOne({ slug }).lean();
-    return blog;
+    const doc = await BlogModel.findOne({ slug }).lean();
+    if (!doc) return null;
+
+    // Map Mongoose document to our Blog interface
+    return {
+      _id: doc._id.toString(),
+      title: doc.title,
+      slug: doc.slug,
+      content: doc.content,
+      author: doc.author || "Unknown Author",
+      coverImage: doc.coverImage,
+      tags: doc.tags || [],
+      createdAt:
+        doc.createdAt instanceof Date
+          ? doc.createdAt.toISOString()
+          : new Date(doc.createdAt).toISOString(),
+    };
   } catch (error) {
     console.error("Failed to fetch blog:", error);
     return null;

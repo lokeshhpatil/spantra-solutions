@@ -5,6 +5,8 @@ export interface IBlog extends Document {
   slug: string;
   content: string;
   coverImage?: string;
+  author?: string;
+  tags?: string[];
   createdAt: Date;
   updatedAt: Date;
 }
@@ -26,6 +28,12 @@ const BlogSchema: Schema<IBlog> = new Schema(
     },
     coverImage: {
       type: String,
+    },
+    author: {
+      type: String,
+    },
+    tags: {
+      type: [String],
     },
   },
   {
