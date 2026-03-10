@@ -21,7 +21,7 @@ const FirstPart = () => {
 
         {/* Button: Spacing adjusted for thumb-reach on mobile */}
         <div className="mt-10 md:mt-12">
-          <Button text="Book a Free Call" variant="primary" />
+          <Button text="Contact Us" variant="primary" />
         </div>
       </div>
 

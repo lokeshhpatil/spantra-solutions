@@ -9,6 +9,7 @@ import Heading from "@/components/fourth-page/heading";
 import Reviews from "@/components/fourth-page/Reviews";
 import Logos from "@/components/thirdpage/logos";
 import Articles from "@/components/articles/Articles";
+import FAQ from "@/components/articles/FAQ";
 // import Testimonials from "@/components/fourth-page/testimonials";
 
 export default function Home() {
@@ -48,6 +49,10 @@ export default function Home() {
 
         <div className="bg-white flex flex-col lg:flex-row w-full min-h-screen">
           <Articles />
+        </div>
+
+        <div className="flex flex-col bg-[#fafafa] lg:flex-row min-h-screen">
+          <FAQ />
         </div>
       </div>
     </>

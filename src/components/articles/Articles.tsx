@@ -17,7 +17,10 @@ export default async function Articles() {
   }));
 
   return (
-    <section className="py-20 px-6 md:px-12 lg:px-20 max-w-[1400px] mx-auto font-sans">
+    <section
+      id="articles"
+      className="py-20 px-6 md:px-12 lg:px-20 max-w-[1400px] mx-auto font-sans"
+    >
       <div className="text-center mb-16">
         <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-gray-900 leading-tight">
           Take a look at the

@@ -39,6 +39,22 @@ const Navbar = () => {
             >
               Services
             </Link>
+            <Link
+              href="/#articles"
+              onClick={(e) => {
+                const isHome = window.location.pathname === "/";
+                if (isHome) {
+                  e.preventDefault();
+                  document
+                    .getElementById("articles")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                  window.history.pushState(null, "", "/#articles");
+                }
+              }}
+              className="hover:text-black transition cursor-pointer"
+            >
+              Articles
+            </Link>
             <Link href="/about" className="hover:text-black transition">
               About Us
             </Link>
@@ -47,7 +63,7 @@ const Navbar = () => {
           {/* Right Side: CTA + Mobile Toggle */}
           <div className="flex items-center gap-2">
             <div className="hidden sm:block">
-              <Button text="Book a Call" variant="primary" />
+              <Button text="Contact Us" variant="primary" />
             </div>
 
             {/* Mobile Menu Toggle */}
@@ -86,12 +102,28 @@ const Navbar = () => {
             >
               Services
             </Link>
+            <Link
+              href="/#articles"
+              onClick={(e) => {
+                setIsOpen(false);
+                const isHome = window.location.pathname === "/";
+                if (isHome) {
+                  e.preventDefault();
+                  setTimeout(() => {
+                    document
+                      .getElementById("articles")
+                      ?.scrollIntoView({ behavior: "smooth" });
+                    window.history.pushState(null, "", "/#articles");
+                  }, 100);
+                }
+              }}
+              className="cursor-pointer"
+            >
+              Articles
+            </Link>
             <Link href="/about" onClick={() => setIsOpen(false)}>
               About Us
             </Link>
-            {/* <div className="pt-2 sm:hidden">
-              <Button text="Book a Call" variant="primary" />
-            </div> */}
           </div>
         )}
       </nav>
