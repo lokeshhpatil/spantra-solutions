@@ -31,6 +31,7 @@ export default function ContactSection() {
         });
       }
     } catch (error) {
+      console.log(error);
       setStatus({
         type: "error",
         message: "An error occurred. Please try again later.",
@@ -79,7 +80,7 @@ export default function ContactSection() {
           <div className="space-y-12">
             <div>
               <span className="bg-[#e4fc54] text-gray-900 px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase">
-                Let's discuss
+                Let&apos;s discuss
               </span>
               <h2 className="text-4xl md:text-5xl font-medium mt-6 tracking-tight text-gray-900 leading-tight">
                 Discuss your next <br /> big project.
