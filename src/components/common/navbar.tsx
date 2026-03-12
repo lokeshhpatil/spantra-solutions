@@ -9,7 +9,7 @@ const Navbar = () => {
 
   return (
     <header className="fixed top-4 inset-x-0 z-50 px-4 md:px-6">
-      <nav className="max-w-7xl mx-auto bg-white/90 backdrop-blur-md border border-gray-100 rounded-[2rem] shadow-sm overflow-hidden">
+      <nav className="max-w-7xl mx-auto bg-white/90 backdrop-blur-md border border-gray-100 rounded-4xl shadow-sm overflow-hidden">
         <div className="flex items-center justify-between py-2 pl-6 pr-2">
           {/* Logo */}
           <Link

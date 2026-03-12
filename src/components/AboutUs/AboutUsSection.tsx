@@ -72,7 +72,7 @@ export default function AboutUsSection() {
           {/* Right Column – Image & Paragraph + Stats */}
           <div className="space-y-8">
             {/* Image */}
-            <div className="relative rounded-3xl overflow-hidden shadow-lg aspect-[4/3]">
+            <div className="relative rounded-3xl overflow-hidden shadow-lg aspect-4/3">
               <Image
                 src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg"
                 alt="Spantra Solutions team collaborating"
