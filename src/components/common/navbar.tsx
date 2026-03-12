@@ -9,7 +9,7 @@ const Navbar = () => {
 
   return (
     <header className="fixed top-4 inset-x-0 z-50 px-4 md:px-6">
-      <nav className="max-w-7xl mx-auto bg-white/90 backdrop-blur-md border border-gray-100 rounded-[2rem] shadow-sm overflow-hidden">
+      <nav className="max-w-7xl mx-auto bg-white/90 backdrop-blur-md border border-gray-100 shadow-sm overflow-hidden">
         <div className="flex items-center justify-between py-2 pl-6 pr-2">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
@@ -69,7 +69,7 @@ const Navbar = () => {
             {/* Mobile Menu Toggle */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden p-2 text-slate-600 hover:bg-slate-100 rounded-full transition"
+              className="md:hidden p-2 text-slate-600 hover:bg-slate-100 rounded-full hover:translate-y-0 transition-transform duration-300 ease-out"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
