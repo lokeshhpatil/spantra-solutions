@@ -7,41 +7,46 @@ interface ButtonProps {
   variant?: "primary" | "secondary" | "outline";
   onClick?: () => void;
 }
-const button = ({ text, href, variant = "primary", onClick }: ButtonProps) => {
+
+const Button = ({ text, href, variant = "primary", onClick }: ButtonProps) => {
   const baseStyles =
-    "inline-flex items-center justify-center gap-3 px-6 py-3 rounded-full transition-all duration-300";
+    "group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full transition-all duration-300 font-bold uppercase tracking-widest text-[10px]";
 
   const variants = {
-    primary: "bg-[#D9E31F] text-black hover:bg-[#c4bd0f] active:scale-95",
-    secondary: "bg-black text-white hover:bg-gray-800 active:scale-95",
+    primary: "bg-[#D9E31F] text-black cursor-pointer active:scale-95",
+    secondary: "bg-black text-white hover:bg-zinc-900 active:scale-95",
     outline:
-      "border-2 border-black text-black hover:bg-black hover:text-white active:scale-95",
+      "border border-black/10 text-black hover:border-black active:scale-95",
   };
 
   const className = `${baseStyles} ${variants[variant]}`;
+
   const Icon = (
-    <ArrowRight
-      color="#ffffff"
-      size={32}
-      className="bg-black p-1.5 rounded-full ml-3"
-    />
+    <div className="relative flex items-center justify-center w-8 h-8 bg-black rounded-full transition-transform duration-300 group-hover:translate-x-1">
+      <ArrowRight color="#ffffff" size={16} />
+    </div>
+  );
+
+  const content = (
+    <>
+      <span>{text}</span>
+      {Icon}
+    </>
   );
 
   if (href) {
     return (
       <Link href={href} className={className}>
-        <span>{text}</span>
-        {Icon}
+        {content}
       </Link>
     );
   }
 
   return (
     <button onClick={onClick} className={className}>
-      <span>{text}</span>
-      {Icon}
+      {content}
     </button>
   );
 };
 
-export default button;
+export default Button;
