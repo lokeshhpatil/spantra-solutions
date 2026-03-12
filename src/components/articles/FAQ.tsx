@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { Plus, Minus, Sparkles } from "lucide-react";
+import { Plus, Minus, Sparkles, CornerRightDown } from "lucide-react";
+import Button from "../common/button";
 
 const faqs = [
   {
@@ -48,16 +49,14 @@ export default function FAQ() {
             Answers
           </h2>
 
-          <p className="text-gray-500 text-lg mb-8">
-            Don&apos;t find the answer? We can help
+          <p className="flex flex-col text-gray-500 text-lg mb-8">
+            Don&apos;t find the answer? We can help <br />
+            Scroll Down to Contact Us
           </p>
-
-          <a className="inline-flex items-center justify-center bg-[#295c4d] text-white px-8 py-3.5 rounded-full font-medium hover:bg-[#1f473b] transition-colors w-max">
-            Contact us
-          </a>
-
-          <div className="mt-16 text-[#295c4d]">
+          {/* <CornerRightDown className="w-8 h-8 text-amber-700" /> */}
+          <div className="mt-16 text-[#295c4d] flex gap-12">
             <Sparkles className="w-8 h-8" />
+            <CornerRightDown color="#295c4d" className="w-8 h-8" />
           </div>
         </div>
 

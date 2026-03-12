@@ -132,7 +132,7 @@ const Industries = () => {
       </h2>
 
       {/* Main Card */}
-      <div className="w-full max-w-2xl bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm flex flex-col h-full md:mr-10">
+      <div className="w-full max-w-2xl bg-white border border-gray-200 rounded-2xl overflow-hidden  shadow-sm flex flex-col h-full md:mr-10">
         {/* Tabs Row */}
         <div className="flex w-full border-b border-gray-200 overflow-x-auto no-scrollbar">
           {industriesList.map((ind, idx) => {
@@ -141,7 +141,7 @@ const Industries = () => {
               <button
                 key={idx}
                 onClick={() => setActiveTab(idx)}
-                className={`relative flex-1 shrink-0 flex items-center justify-center gap-2 py-4 px-4 min-w-[150px] text-sm font-semibold transition-colors border-r border-gray-200 last:border-r-0 ${
+                className={`relative flex-1 shrink-0 flex items-center justify-center gap-2 py-4 px-4 min-w-[160px] text-sm font-semibold transition-colors border-r border-gray-200 last:border-r-0 ${
                   isActive
                     ? "bg-gray-50/80 text-gray-900"
                     : "bg-white text-gray-500 hover:text-gray-900 hover:bg-gray-50"
@@ -193,7 +193,7 @@ const Industries = () => {
               {activeData.desc}
             </p>
 
-            <button className="mt-auto flex items-center gap-3 bg-[#d9e31f] text-black px-6 py-3 rounded-full hover:bg-[#c4bd0f] transition-colors group">
+            <button className="mt-auto flex items-center gap-3 bg-[#d9e31f] text-black px-6 py-3 rounded-full transition-colors group">
               Contact Us
               <div className="w-7 h-7 rounded-full bg-black text-white flex items-center justify-center group-hover:translate-x-1 transition-transform">
                 <ArrowRight className="w-4 h-4" />

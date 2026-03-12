@@ -12,7 +12,15 @@ const Navbar = () => {
       <nav className="max-w-7xl mx-auto bg-white/90 backdrop-blur-md border border-gray-100 rounded-[2rem] shadow-sm overflow-hidden">
         <div className="flex items-center justify-between py-2 pl-6 pr-2">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
+          <Link
+            href="/"
+            onClick={() =>
+              document
+                .getElementById("home")
+                ?.scrollIntoView({ behavior: "smooth" })
+            }
+            className="flex items-center gap-2"
+          >
             <span className="text-lg md:text-xl font-extrabold tracking-tighter text-slate-900">
               SPANTRA
             </span>
@@ -63,7 +71,17 @@ const Navbar = () => {
           {/* Right Side: CTA + Mobile Toggle */}
           <div className="flex items-center gap-2">
             <div className="hidden sm:block">
-              <Button text="Contact Us" variant="primary" />
+              <Button
+                onClick={(e) => {
+                  document
+                    .getElementById("contact")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                  window.history.pushState(null, "", "/#contact");
+                  e.preventDefault();
+                }}
+                text="Contact Us"
+                variant="primary"
+              />
             </div>
 
             {/* Mobile Menu Toggle */}

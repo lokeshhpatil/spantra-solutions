@@ -5,7 +5,7 @@ interface ButtonProps {
   text: string;
   href?: string;
   variant?: "primary" | "secondary" | "outline";
-  onClick?: () => void;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
 const Button = ({ text, href, variant = "primary", onClick }: ButtonProps) => {

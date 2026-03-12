@@ -10,9 +10,9 @@ const firstpage = () => {
         Your success is our mission. As business advisors, we offer expert
         guidance. unlocking your potential for growth and profitability
       </p>
-      <div className="px-6 md:px-20 py-8 md:py-10">
+      {/* <div className="px-6 md:px-20 py-8 md:py-10">
         <Button text="Contact Us" variant="primary" />
-      </div>
+      </div> */}
     </div>
   );
 };

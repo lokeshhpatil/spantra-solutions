@@ -27,6 +27,13 @@ const Footer = () => {
           <div className="shrink-0">
             <Link
               href="/#contact"
+              onClick={(e) => {
+                document
+                  .getElementById("contact")
+                  ?.scrollIntoView({ behavior: "smooth" });
+                window.history.pushState(null, "", "/#contact");
+                e.preventDefault();
+              }}
               className="relative flex items-center justify-center w-32 h-32 md:w-40 md:h-40 rounded-full bg-[#d4ff36] text-slate-900 hover:scale-105 transition-transform duration-300 group"
             >
               <div className="absolute w-[80%] h-[80%] border-[0.5px] border-slate-900/20 rounded-full pointer-events-none"></div>

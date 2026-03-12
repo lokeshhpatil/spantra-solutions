@@ -68,7 +68,7 @@ export default function ContactSection() {
           <div className="space-y-6">
             <div>
               <Image
-                src="https://images.pexels.com/photos/281260/pexels-photo-281260.jpeg"
+                src="https://images.pexels.com/photos/1933239/pexels-photo-1933239.jpeg"
                 alt="Contact Spantra Solutions"
                 width={500}
                 height={500}
