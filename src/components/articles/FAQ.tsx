@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { Plus, Minus, Sparkles, CornerRightDown } from "lucide-react";
-import Button from "../common/button";
 
 const faqs = [
   {

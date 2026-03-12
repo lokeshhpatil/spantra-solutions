@@ -1,5 +1,3 @@
-import Button from "../common/button";
-
 const firstpage = () => {
   return (
     <div className="flex flex-col justify-center flex-1 bg-[#F3F4EF] text-black py-12 lg:py-0">

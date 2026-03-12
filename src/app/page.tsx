@@ -11,6 +11,7 @@ import Logos from "@/components/thirdpage/logos";
 import Articles from "@/components/articles/Articles";
 import FAQ from "@/components/articles/FAQ";
 import ContactSection from "@/components/ContactSection/ContactSection";
+import AboutUsSection from "@/components/AboutUs/AboutUsSection";
 
 export default function Home() {
   return (
@@ -57,6 +58,11 @@ export default function Home() {
 
         <div>
           <ContactSection />
+        </div>
+
+        {/* About Us Section */}
+        <div>
+          <AboutUsSection />
         </div>
       </div>
     </>
