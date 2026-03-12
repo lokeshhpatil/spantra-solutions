@@ -114,7 +114,17 @@ const Footer = () => {
                   </li>
                   <li>
                     <Link
-                      href="/about"
+                      href="/#about"
+                      onClick={(e) => {
+                        const isHome = window.location.pathname === "/";
+                        if (isHome) {
+                          e.preventDefault();
+                          document
+                            .getElementById("about")
+                            ?.scrollIntoView({ behavior: "smooth" });
+                          window.history.pushState(null, "", "/#about");
+                        }
+                      }}
                       className="text-sm leading-6 text-slate-600 hover:text-slate-900"
                     >
                       About Us

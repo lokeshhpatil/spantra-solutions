@@ -152,7 +152,23 @@ const Navbar = () => {
             >
               Articles
             </Link>
-            <Link href="/about" onClick={() => setIsOpen(false)}>
+            <Link
+              href="/#about"
+              onClick={(e) => {
+                setIsOpen(false);
+                const isHome = window.location.pathname === "/";
+                if (isHome) {
+                  e.preventDefault();
+                  setTimeout(() => {
+                    document
+                      .getElementById("about")
+                      ?.scrollIntoView({ behavior: "smooth" });
+                    window.history.pushState(null, "", "/#about");
+                  }, 100);
+                }
+              }}
+              className="cursor-pointer"
+            >
               About Us
             </Link>
           </div>
