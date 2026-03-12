@@ -10,7 +10,7 @@ import Reviews from "@/components/fourth-page/Reviews";
 import Logos from "@/components/thirdpage/logos";
 import Articles from "@/components/articles/Articles";
 import FAQ from "@/components/articles/FAQ";
-// import Testimonials from "@/components/fourth-page/testimonials";
+import ContactSection from "@/components/ContactSection/ContactSection";
 
 export default function Home() {
   return (
@@ -53,6 +53,10 @@ export default function Home() {
 
         <div className="flex flex-col bg-[#fafafa] lg:flex-row min-h-screen">
           <FAQ />
+        </div>
+
+        <div>
+          <ContactSection />
         </div>
       </div>
     </>

@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import {
   Facebook,
@@ -55,7 +56,7 @@ const Footer = () => {
               </span>
             </Link>
             <div className="text-sm leading-6 text-slate-600">
-              <p>Email: hello@spantrasolutions.com</p>
+              <p>support@spantra.net</p>
             </div>
           </div>
           <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
@@ -74,16 +75,38 @@ const Footer = () => {
                     </Link>
                   </li>
                   <li>
+                    {/* services */}
                     <Link
                       href="/#services"
+                      onClick={(e) => {
+                        const isHome = window.location.pathname === "/";
+                        if (isHome) {
+                          e.preventDefault();
+                          document
+                            .getElementById("services")
+                            ?.scrollIntoView({ behavior: "smooth" });
+                          window.history.pushState(null, "", "/#services");
+                        }
+                      }}
                       className="text-sm leading-6 text-slate-600 hover:text-slate-900"
                     >
                       Services
                     </Link>
                   </li>
                   <li>
+                    {/* articles */}
                     <Link
                       href="/#articles"
+                      onClick={(e) => {
+                        const isHome = window.location.pathname === "/";
+                        if (isHome) {
+                          e.preventDefault();
+                          document
+                            .getElementById("articles")
+                            ?.scrollIntoView({ behavior: "smooth" });
+                          window.history.pushState(null, "", "/#articles");
+                        }
+                      }}
                       className="text-sm leading-6 text-slate-600 hover:text-slate-900"
                     >
                       Articles
@@ -138,6 +161,9 @@ const Footer = () => {
                   </li>
                 </ul>
               </div>
+            </div>
+            <div>
+              <h2 className="bg-emerald-900 w-full h-full rounded-full"></h2>
             </div>
           </div>
         </div>

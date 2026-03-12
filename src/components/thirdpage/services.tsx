@@ -168,9 +168,9 @@ const Services = () => {
               {activeData.desc}
             </p>
 
-            <button className="mt-auto flex items-center gap-3 bg-[#d9e31f] text-black px-6 py-3 rounded-full font-semibold hover:bg-[#c4bd0f] transition-colors group">
+            <button className="mt-auto flex items-center gap-3 bg-[#d9e31f] text-black px-6 py-3 rounded-full hover:bg-[#c4bd0f] transition-colors group">
               Contact Us
-              <div className="w-7 h-7 rounded-full bg-black text-white flex items-center justify-center group-hover:translate-x-1 transition-transform">
+              <div className="w-7 h-7 rounded-full bg-black text-white text-sm font-light flex items-center justify-center group-hover:translate-x-1 transition-transform">
                 <ArrowRight className="w-4 h-4" />
               </div>
             </button>
