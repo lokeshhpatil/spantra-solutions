@@ -65,15 +65,6 @@ export default function ContactSection() {
 
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div className="space-y-6">
-            <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-sm">
-              <Image
-                src="https://images.unsplash.com/photo-1579389083078-4e7018379f7e"
-                alt="Spantra Solutions Workspace"
-                fill
-                priority
-                className="w-full h-full object-cover"
-              />
-            </div>
             <div>
               <Image
                 src="https://images.pexels.com/photos/281260/pexels-photo-281260.jpeg"
