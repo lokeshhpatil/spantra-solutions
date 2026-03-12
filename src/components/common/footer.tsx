@@ -1,13 +1,6 @@
 "use client";
 import Link from "next/link";
-import {
-  Facebook,
-  Twitter,
-  Instagram,
-  Linkedin,
-  ArrowUpRight,
-  Sparkles,
-} from "lucide-react";
+import { ArrowUpRight, Sparkles } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -169,8 +162,35 @@ const Footer = () => {
                 </ul>
               </div>
             </div>
-            <div>
-              <h2 className="bg-emerald-900 w-full h-full rounded-full"></h2>
+
+            <div className="flex items-stretch">
+              <div className="bg-emerald-900 pl-5 pr-5 mt-5 mb-10 md:w-full rounded-3xl p-8 flex flex-col justify-between gap-6 text-white">
+                <div>
+                  <Sparkles
+                    className="text-[#d4ff36] fill-[#d4ff36] mb-4"
+                    size={24}
+                  />
+                  <h3 className="text-lg font-bold tracking-tight leading-snug">
+                    Ready to elevate
+                    <br />
+                    your business?
+                  </h3>
+                  <p className="text-emerald-200 text-sm mt-2 leading-relaxed">
+                    Get in touch with our team and let&apos;s build something
+                    extraordinary together.
+                  </p>
+                </div>
+                <Link
+                  href="mailto:support@spantra.net"
+                  className="inline-flex items-center justify-center gap-2 bg-[#d4ff36] text-slate-900 text-xs font-bold uppercase tracking-widest px-6 py-3 rounded-full hover:scale-105 transition-transform duration-300 group w-fit"
+                >
+                  Email Us
+                  <ArrowUpRight
+                    size={14}
+                    className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+                  />
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -198,25 +218,6 @@ const Footer = () => {
             <Link href="/#contact" className="hover:text-slate-900 transition">
               Contact Us
             </Link>
-          </div>
-
-          <div className="flex space-x-6">
-            <span className="text-slate-400 hover:text-slate-500 cursor-pointer">
-              <span className="sr-only">Facebook</span>
-              <Facebook className="h-5 w-5" />
-            </span>
-            <span className="text-slate-400 hover:text-slate-500 cursor-pointer">
-              <span className="sr-only">Twitter</span>
-              <Twitter className="h-5 w-5" />
-            </span>
-            <span className="text-slate-400 hover:text-slate-500 cursor-pointer">
-              <span className="sr-only">Instagram</span>
-              <Instagram className="h-5 w-5" />
-            </span>
-            <span className="text-slate-400 hover:text-slate-500 cursor-pointer">
-              <span className="sr-only">LinkedIn</span>
-              <Linkedin className="h-5 w-5" />
-            </span>
           </div>
         </div>
       </div>

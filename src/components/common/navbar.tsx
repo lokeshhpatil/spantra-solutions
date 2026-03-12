@@ -63,7 +63,20 @@ const Navbar = () => {
             >
               Articles
             </Link>
-            <Link href="/about" className="hover:text-black transition">
+            <Link
+              href="/#about"
+              onClick={(e) => {
+                const isHome = window.location.pathname === "/";
+                if (isHome) {
+                  e.preventDefault();
+                  document
+                    .getElementById("about")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                  window.history.pushState(null, "", "/#about");
+                }
+              }}
+              className="hover:text-black transition cursor-pointer"
+            >
               About Us
             </Link>
           </div>
