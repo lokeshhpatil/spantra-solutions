@@ -84,17 +84,7 @@ const Navbar = () => {
           {/* Right Side: CTA + Mobile Toggle */}
           <div className="flex items-center gap-2">
             <div className="hidden sm:block">
-              <Button
-                onClick={(e) => {
-                  document
-                    .getElementById("contact")
-                    ?.scrollIntoView({ behavior: "smooth" });
-                  window.history.pushState(null, "", "/#contact");
-                  e.preventDefault();
-                }}
-                text="Contact Us"
-                variant="primary"
-              />
+              <Button text="Contact Us" variant="primary" />
             </div>
 
             {/* Mobile Menu Toggle */}

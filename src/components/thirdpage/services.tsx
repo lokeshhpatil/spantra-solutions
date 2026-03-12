@@ -9,8 +9,8 @@ import {
   Copy,
   Users,
   Briefcase,
-  ArrowRight,
 } from "lucide-react";
+import Button from "../common/button";
 
 const Services = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -168,12 +168,14 @@ const Services = () => {
               {activeData.desc}
             </p>
 
-            <button className="mt-auto flex items-center gap-3 bg-[#d9e31f] text-black px-6 py-3 rounded-full transition-colors group">
+            {/* <button className="mt-auto flex items-center gap-3 bg-[#d9e31f] text-black px-6 py-3 rounded-full transition-colors group">
               Contact Us
               <div className="w-7 h-7 rounded-full bg-black text-white flex items-center justify-center group-hover:translate-x-1 transition-transform">
                 <ArrowRight className="w-4 h-4" />
               </div>
-            </button>
+            </button> */}
+
+            <Button text="Contact Us" variant="primary" />
           </div>
         </div>
       </div>

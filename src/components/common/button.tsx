@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
@@ -5,10 +6,9 @@ interface ButtonProps {
   text: string;
   href?: string;
   variant?: "primary" | "secondary" | "outline";
-  onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
-const Button = ({ text, href, variant = "primary", onClick }: ButtonProps) => {
+const Button = ({ text, href, variant = "primary" }: ButtonProps) => {
   const baseStyles =
     "group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full transition-all duration-300 font-bold uppercase tracking-widest text-[10px]";
 
@@ -36,14 +36,31 @@ const Button = ({ text, href, variant = "primary", onClick }: ButtonProps) => {
 
   if (href) {
     return (
-      <Link href={href} className={className}>
+      <Link
+        onClick={() => {
+          document
+            .getElementById("contact")
+            ?.scrollIntoView({ behavior: "smooth" });
+          window.history.pushState(null, "", "/#contact");
+        }}
+        href={href}
+        className={className}
+      >
         {content}
       </Link>
     );
   }
 
   return (
-    <button onClick={onClick} className={className}>
+    <button
+      onClick={() => {
+        document
+          .getElementById("contact")
+          ?.scrollIntoView({ behavior: "smooth" });
+        window.history.pushState(null, "", "/#contact");
+      }}
+      className={className}
+    >
       {content}
     </button>
   );
