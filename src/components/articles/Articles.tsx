@@ -1,12 +1,12 @@
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
 
 export default async function Articles() {
-  // Fetch posts from Sanity CMS
-  const query = `*[_type == "post"] | order(_createdAt desc) {
+  // Fetch posts from Sanity CMS (limiting to 3 for the home page slider/grid)
+  const query = `*[_type == "post"] | order(_createdAt desc)[0...3] {
     _id,
     title,
     "slug": slug.current,
@@ -90,6 +90,15 @@ export default async function Articles() {
             No articles found.
           </div>
         )}
+      </div>
+
+      <div className="mt-16 text-center flex justify-center">
+        <Link
+          href="/articles"
+          className="inline-flex items-center justify-center gap-2 bg-gray-900 text-white px-8 py-4 rounded-full text-[15px] font-semibold hover:bg-gray-800 transition-colors"
+        >
+          View All Articles <ArrowRight className="w-4 h-4" />
+        </Link>
       </div>
     </section>
   );
