@@ -28,7 +28,7 @@ const postSchema = defineType({
       name: 'content',
       title: 'Content',
       type: 'array', 
-      of: [{ type: 'block' }], // Standard professional rich text (replaces your Mongoose 'string')
+      of: [{ type: 'block' }],
       validation: (Rule) => Rule.required().error('Please provide content for the blog'),
     }),
     {
