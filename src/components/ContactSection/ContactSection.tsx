@@ -21,7 +21,7 @@ export default function ContactSection() {
       if (result.success) {
         setStatus({
           type: "success",
-          message: "Inquiry sent successfully! 🚀",
+          message: "Inquiry sent successfully",
         });
         formRef.current?.reset(); // Clear form on success
       } else {
@@ -54,7 +54,7 @@ export default function ContactSection() {
           <div
             className={`fixed bottom-10 right-10 z-50 px-6 py-4 rounded-2xl shadow-2xl transition-all duration-500 animate-bounce-subtle ${
               status.type === "success"
-                ? "bg-black text-white border-l-4 border-[#D9E31F]"
+                ? "bg-black text-white"
                 : "bg-red-600 text-white"
             }`}
           >
