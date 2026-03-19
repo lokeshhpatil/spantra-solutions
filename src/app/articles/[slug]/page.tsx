@@ -1,6 +1,9 @@
 import Navbar from "@/components/common/navbar";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import { PortableText } from "@portabletext/react";
+import { client } from "@/sanity/lib/client";
+import { urlFor } from "@/sanity/lib/image";
 
 export const dynamic = "force-dynamic";
 
@@ -9,39 +12,35 @@ interface Blog {
   _id: string;
   title: string;
   slug: string;
-  content: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  content: any;
   author: string;
-  coverImage?: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  coverImage?: any;
   tags?: string[];
-  createdAt: string;
+  _createdAt: string;
 }
 
-import dbConnect from "@/lib/mongoose";
-import BlogModel from "@/models/Blog";
-
-// Fetch a single blog by its slug directly from the database
+// Fetch a single blog by its slug directly from Sanity
 async function getBlog(slug: string): Promise<Blog | null> {
   try {
-    await dbConnect();
-    const doc = await BlogModel.findOne({ slug }).lean();
+    const query = `*[_type == "post" && slug.current == $slug][0] {
+      _id,
+      title,
+      "slug": slug.current,
+      content,
+      author,
+      coverImage,
+      tags,
+      _createdAt
+    }`;
+    
+    const doc = await client.fetch(query, { slug });
     if (!doc) return null;
 
-    // Map Mongoose document to our Blog interface
-    return {
-      _id: doc._id.toString(),
-      title: doc.title,
-      slug: doc.slug,
-      content: doc.content,
-      author: doc.author || "Unknown Author",
-      coverImage: doc.coverImage,
-      tags: doc.tags || [],
-      createdAt:
-        doc.createdAt instanceof Date
-          ? doc.createdAt.toISOString()
-          : new Date(doc.createdAt).toISOString(),
-    };
+    return doc;
   } catch (error) {
-    console.error("Failed to fetch blog:", error);
+    console.error("Failed to fetch blog from Sanity:", error);
     return null;
   }
 }
@@ -60,7 +59,7 @@ export default async function BlogPostPage({
   }
 
   // Format the date
-  const formattedDate = new Date(blog.createdAt).toLocaleDateString("en-US", {
+  const formattedDate = new Date(blog._createdAt).toLocaleDateString("en-US", {
     year: "numeric",
     month: "long",
     day: "numeric",
@@ -102,7 +101,7 @@ export default async function BlogPostPage({
         <div className="relative w-full aspect-video md:aspect-21/9 bg-gray-100 mb-12 rounded-2xl overflow-hidden shadow-sm">
           {blog.coverImage ? (
             <Image
-              src={blog.coverImage}
+              src={urlFor(blog.coverImage).url()}
               alt={blog.title}
               width={1200}
               height={630}
@@ -117,12 +116,7 @@ export default async function BlogPostPage({
 
         {/* Article Body */}
         <article className="prose prose-lg md:prose-xl max-w-none text-gray-700 leading-relaxed">
-          {/* 
-            Note: If your content is HTML string, use dangerouslySetInnerHTML: 
-            <div dangerouslySetInnerHTML={{ __html: blog.content }} />
-            If it's plain text, standard output works. 
-          */}
-          <p className="whitespace-pre-wrap">{blog.content}</p>
+          <PortableText value={blog.content} />
         </article>
       </main>
     </div>

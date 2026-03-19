@@ -1,21 +1,21 @@
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import dbConnect from "@/lib/mongoose";
-import BlogModel from "@/models/Blog";
+import { client } from "@/sanity/lib/client";
+import { urlFor } from "@/sanity/lib/image";
 
 export default async function Articles() {
-  await dbConnect();
-  const blogsData = await BlogModel.find({}).sort({ createdAt: -1 }).lean();
-
-  // Serialize ObjectId to string for safe rendering
-  const blogs = blogsData.map((blog) => ({
-    ...blog,
-    _id: blog._id.toString(),
-    createdAt: blog.createdAt
-      ? blog.createdAt.toISOString()
-      : new Date().toISOString(),
-  }));
+  // Fetch posts from Sanity CMS
+  const query = `*[_type == "post"] | order(_createdAt desc) {
+    _id,
+    title,
+    "slug": slug.current,
+    coverImage,
+    tags,
+    _createdAt
+  }`;
+  
+  const blogs = await client.fetch(query);
 
   return (
     <section
@@ -37,15 +37,17 @@ export default async function Articles() {
               _id: string;
               title: string;
               slug: string;
-              coverImage?: string;
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
+              coverImage?: any;
               tags?: string[];
+              _createdAt: string;
             }) => (
               <div key={blog._id} className="group flex flex-col gap-4">
                 {/* Image Container */}
                 <div className="relative w-full aspect-4/3 bg-gray-100 overflow-hidden">
                   {blog.coverImage ? (
                     <Image
-                      src={blog.coverImage}
+                      src={urlFor(blog.coverImage).url()}
                       alt={blog.title}
                       width={800}
                       height={600}
