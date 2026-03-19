@@ -6,9 +6,10 @@ interface ButtonProps {
   text: string;
   href?: string;
   variant?: "primary" | "secondary" | "outline";
+  onClick?: () => void;
 }
 
-const Button = ({ text, href, variant = "primary" }: ButtonProps) => {
+const Button = ({ text, href, variant = "primary", onClick }: ButtonProps) => {
   const baseStyles =
     "group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full transition-all duration-300 font-bold uppercase tracking-widest text-[10px]";
 
@@ -34,33 +35,28 @@ const Button = ({ text, href, variant = "primary" }: ButtonProps) => {
     </>
   );
 
-  if (href) {
+  const defaultHandleClick = () => {
+    if (onClick) {
+      onClick();
+      return;
+    }
+    // If it's a "Contact Us" style button and no custom logic is provided
+    if (!href || href === "#contact") {
+      document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+      window.history.pushState(null, "", "/#contact");
+    }
+  };
+
+  if (href && href !== "#contact") {
     return (
-      <Link
-        onClick={() => {
-          document
-            .getElementById("contact")
-            ?.scrollIntoView({ behavior: "smooth" });
-          window.history.pushState(null, "", "/#contact");
-        }}
-        href={href}
-        className={className}
-      >
+      <Link href={href} className={className} onClick={onClick}>
         {content}
       </Link>
     );
   }
 
   return (
-    <button
-      onClick={() => {
-        document
-          .getElementById("contact")
-          ?.scrollIntoView({ behavior: "smooth" });
-        window.history.pushState(null, "", "/#contact");
-      }}
-      className={className}
-    >
+    <button onClick={defaultHandleClick} className={className}>
       {content}
     </button>
   );

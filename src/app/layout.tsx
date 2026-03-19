@@ -3,21 +3,16 @@ import { Inter } from 'next/font/google';
 import "./globals.css";
 import Footer from "@/components/common/footer";
 
-const geistSans = Inter({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-inter',
-});
-
-const geistMono = Inter({
+const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-inter',
 });
 
 export const metadata: Metadata = {
-  title: "Spantra Solutions",
-  description: "Spantra Solutions",
+  title: "Spantra Solutions | Modern Operations & Data Entry Services",
+  description: "Spantra Solutions provides comprehensive data entry, cleaning, and operations support to help your business scale efficiently.",
+  keywords: ["Data Entry", "Data Cleaning", "CRM Updates", "Back-Office Operations", "Spantra Solutions"],
 };
 
 export default function RootLayout({
@@ -28,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}
+        className={`${inter.variable} antialiased flex flex-col min-h-screen`}
       >
         <main className="grow">
           {children}

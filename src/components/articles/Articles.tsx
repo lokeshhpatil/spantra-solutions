@@ -1,4 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 import Image from "next/image";
 import dbConnect from "@/lib/mongoose";
 import BlogModel from "@/models/Blog";
@@ -73,12 +74,12 @@ export default async function Articles() {
                 </h3>
 
                 {/* Link */}
-                <a
+                <Link
                   href={`/articles/${blog.slug}`}
                   className="inline-flex items-center text-[15px] font-semibold text-gray-900 hover:text-gray-600 transition-colors mt-auto pt-2"
                 >
                   Learn More <ArrowUpRight className="w-[18px] h-[18px] ml-1" />
-                </a>
+                </Link>
               </div>
             ),
           )
