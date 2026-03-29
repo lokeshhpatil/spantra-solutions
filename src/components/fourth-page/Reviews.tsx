@@ -1,24 +1,24 @@
 const Reviews = () => {
-  const reviewsList = [
+  const testimonials = [
     {
-      author: "Shubham Patil",
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores odio architecto cumque optio ex provident voluptate dolore excepturi facilis distinctio deleniti, eos commodi placeat reiciendis!",
+      author: "James Harrington",
+      text: "Spantra Solutions transformed our data workflow. Their team is incredibly precise, and the turnaround time exceeded our expectations for our London-based operations.",
     },
     {
-      author: "Lokesh Patil",
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores odio architecto cumque optio ex provident voluptate dolore excepturi facilis distinctio deleniti, eos commodi placeat reiciendis!",
+      author: "Sarah McAllister",
+      text: "Exceptional attention to detail. We outsourced our CRM cleanup to them, and the results were flawless. A truly reliable partner for any growing US business.",
     },
     {
-      author: "Manish Deore",
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores odio architecto cumque optio ex provident voluptate dolore excepturi facilis distinctio deleniti, eos commodi placeat reiciendis!",
+      author: "Dr. Klaus Schmidt",
+      text: "Professional, communicative, and highly efficient. They handled our complex document indexing with great care. I highly recommend their managed services.",
     },
     {
-      author: "Sushant Deore",
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores odio architecto cumque optio ex provident voluptate dolore excepturi facilis distinctio deleniti, eos commodi placeat reiciendis!",
+      author: "Elena Rodriguez",
+      text: "Finding a partner that understands scalability is hard. Spantra made our expansion into digital data management seamless and cost-effective.",
     },
     {
-      author: "Pratik Patil",
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores odio architecto cumque optio ex provident voluptate dolore excepturi facilis distinctio deleniti, eos commodi placeat reiciendis!",
+      author: "Robert Chen",
+      text: "The quality of work is world-class. They don't just enter data; they ensure the integrity of your business information. Simply the best in the industry.",
     },
   ];
 
