@@ -43,7 +43,7 @@ export default function Home() {
           <div className="md:flex w-full lg:w-2/3 mt-10">
             <Reviews />
             <div className="mt-10 md:justify-center items-center">
-              <Logos />
+              {/* <Logos /> */}
             </div>
           </div>
         </div>
