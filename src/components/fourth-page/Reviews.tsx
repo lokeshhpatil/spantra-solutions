@@ -1,5 +1,5 @@
 const Reviews = () => {
-  const testimonials = [
+  const reviewsList = [
     {
       author: "James Harrington",
       text: "Spantra Solutions transformed our data workflow. Their team is incredibly precise, and the turnaround time exceeded our expectations for our London-based operations.",
