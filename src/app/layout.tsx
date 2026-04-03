@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} antialiased flex flex-col min-h-screen`}
+        className={`${inter.variable} antialiased flex flex-col min-h-screen overflow-x-hidden`}
       >
         <main className="grow">
           {children}
